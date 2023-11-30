@@ -42,8 +42,8 @@ class Address{
         return this.city;
     }
 
-    public showAddress(): string{
-        return `City: ${this.city}, District: ${this.district}, Division: ${this.division}`;
+    public getAddress(){
+        return ({division: this.division, city: this.city, district: this.district});
     }
 
 }
