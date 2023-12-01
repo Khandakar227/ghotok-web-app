@@ -2,8 +2,11 @@ class DOB{
     private day: number = 1;
     private month: number = 1;
     private year: number = 2001;
-
+    private daysInMonth: number[] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     constructor(d: number, m: number, y: number ){
+        if(d > this.daysInMonth[m-1]){
+            throw new Error("Invalid day");
+        }
         this.setDay(d);
         this.setMonth(m);
         this.setYear(y);
