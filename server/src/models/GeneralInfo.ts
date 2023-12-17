@@ -2,7 +2,7 @@ import { BLOOD_GROUP, MARITAL_STATUS } from "../libs";
 import DOB from "./DOB";
 
 // general-info.ts
-  interface GeneralInfoProps {
+  export interface GeneralInfoProps {
     description: string;
     blood_group: BLOOD_GROUP;
     height: number;
