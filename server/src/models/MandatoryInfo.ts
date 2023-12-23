@@ -1,6 +1,6 @@
 import { GENDER } from "../libs";
 
-  interface MandatoryInfoProps {
+ export interface MandatoryInfoProps {
     username: string;
     password: string;
     email: string;
