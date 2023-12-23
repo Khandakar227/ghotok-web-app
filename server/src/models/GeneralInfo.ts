@@ -3,106 +3,106 @@ import DOB from "./DOB";
 
 // general-info.ts
   export interface GeneralInfoProps {
-    description: string;
-    blood_group: BLOOD_GROUP;
-    height: number;
-    marital_status: MARITAL_STATUS;
-    weight: number;
-    complexion: string;
-    nationality: string;
-    date_of_birth: DOB;
+    description?: string;
+    blood_group?: BLOOD_GROUP;
+    height?: number;
+    marital_status?: MARITAL_STATUS;
+    weight?: number;
+    complexion?: string;
+    nationality?: string;
+    date_of_birth?: DOB;
   }
   
-  export abstract class GeneralInfo {
-    private description: string;
-    private blood_group: BLOOD_GROUP;
-    private height: number;
-    private marital_status;
-    private weight: number;
-    private complexion: string;
-    private nationality: string;
-    private date_of_birth:DOB;
+  // export abstract class GeneralInfo {
+  //   private description: string;
+  //   private blood_group: BLOOD_GROUP;
+  //   private height: number;
+  //   private marital_status;
+  //   private weight: number;
+  //   private complexion: string;
+  //   private nationality: string;
+  //   private date_of_birth:DOB;
   
-    constructor(props:GeneralInfoProps) {
-      this.description = props.description;
-      this.blood_group = props.blood_group;
-      this.height = props.height;
-      this.marital_status = props.marital_status;
-      this.weight = props.weight;
-      this.complexion = props.complexion;
-      this.nationality = props.nationality;
-      this.date_of_birth = props.date_of_birth;
-    }
+  //   constructor(props:GeneralInfoProps) {
+  //     this.description = props.description;
+  //     this.blood_group = props.blood_group;
+  //     this.height = props.height;
+  //     this.marital_status = props.marital_status;
+  //     this.weight = props.weight;
+  //     this.complexion = props.complexion;
+  //     this.nationality = props.nationality;
+  //     this.date_of_birth = props.date_of_birth;
+  //   }
 
-    // Setters and getters for GeneralInfo
-    public setDescription(desc: string): void {
-      this.description = desc;
-    }
+  //   // Setters and getters for GeneralInfo
+  //   public setDescription(desc: string): void {
+  //     this.description = desc;
+  //   }
   
-    public setBloodGroup(bg: BLOOD_GROUP): void {
-      this.blood_group = bg;
-    }
+  //   public setBloodGroup(bg: BLOOD_GROUP): void {
+  //     this.blood_group = bg;
+  //   }
   
-    public setHeight(h: number): void {
-      if (h < 0) {
-        throw new Error("Height cannot be negative");
-      }
-      this.height = h;
-    }
+  //   public setHeight(h: number): void {
+  //     if (h < 0) {
+  //       throw new Error("Height cannot be negative");
+  //     }
+  //     this.height = h;
+  //   }
   
-    public setMaritalStatus(ms: MARITAL_STATUS): void {
-      this.marital_status = ms;
-    }
+  //   public setMaritalStatus(ms: MARITAL_STATUS): void {
+  //     this.marital_status = ms;
+  //   }
   
-    public setWeight(w: number): void {
-      if (w < 0) {
-        throw new Error("Weight cannot be negative");
-      }
-      this.weight = w;
-    }
+  //   public setWeight(w: number): void {
+  //     if (w < 0) {
+  //       throw new Error("Weight cannot be negative");
+  //     }
+  //     this.weight = w;
+  //   }
   
-    public setComplexion(comp: string): void {
-      this.complexion = comp;
-    }
+  //   public setComplexion(comp: string): void {
+  //     this.complexion = comp;
+  //   }
   
-    public setNationality(nat: string): void {
-      this.nationality = nat;
-    }
+  //   public setNationality(nat: string): void {
+  //     this.nationality = nat;
+  //   }
   
-    public setDOB(dob: DOB): void {
-      this.date_of_birth = dob;
-    }
+  //   public setDOB(dob: DOB): void {
+  //     this.date_of_birth = dob;
+  //   }
   
-    public getDescription(): string {
-      return this.description;
-    }
+  //   public getDescription(): string {
+  //     return this.description;
+  //   }
   
-    public getBloodGroup(): BLOOD_GROUP {
-      return this.blood_group;
-    }
+  //   public getBloodGroup(): BLOOD_GROUP {
+  //     return this.blood_group;
+  //   }
   
-    public getHeight(): number {
-      return this.height;
-    }
+  //   public getHeight(): number {
+  //     return this.height;
+  //   }
   
-    public getMaritalStatus(): MARITAL_STATUS {
-      return this.marital_status;
-    }
+  //   public getMaritalStatus(): MARITAL_STATUS {
+  //     return this.marital_status;
+  //   }
   
-    public getWeight(): number {
-      return this.weight;
-    }
+  //   public getWeight(): number {
+  //     return this.weight;
+  //   }
   
-    public getComplexion(): string {
-      return this.complexion;
-    }
+  //   public getComplexion(): string {
+  //     return this.complexion;
+  //   }
   
-    public getNationality(): string {
-      return this.nationality;
-    }
+  //   public getNationality(): string {
+  //     return this.nationality;
+  //   }
   
-    public getDOB(): DOB {
-      return this.date_of_birth;
-    }
-  }
+  //   public getDOB(): DOB {
+  //     return this.date_of_birth;
+  //   }
+  // }
   
