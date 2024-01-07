@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 export class Middleware {
     public static verifyUser(token:string) {
@@ -12,6 +12,17 @@ export class Middleware {
             
         } catch (error) {
             res.status(403).json({ error: true, message: "Unauthorized Access" });
+            console.log(error);
+        }
+    }
+    public static validateLogin(req:Request, res:Response, next:NextFunction) {
+        try {
+            const {email} = req.body;
+            const emailRgx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(emailRgx.test(email)) next();
+            else return res.status(401).json({ error: true, message: "Invalid email" });
+        } catch (error) {
+            res.status(403).json({ error: true, message: "Input invalid" });
             console.log(error);
         }
     }

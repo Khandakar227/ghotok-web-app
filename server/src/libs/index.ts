@@ -18,3 +18,5 @@ export enum MARITAL_STATUS {
   UNMARRIED = "unmarried",
   DIVORCED = "divorced",
 }
+
+export const LOGIN_DURATION = 3_600_000 * 4;
