@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import UserModel from "../models/mongodb/userModel";
-import mongoose from "mongoose";
 
 class UserInfoRouteHandler {
   public async update(req: Request, res: Response) {
@@ -28,7 +27,7 @@ class UserInfoRouteHandler {
         message: "User does not exist",
       });
     }
-    
+
     await UserModel.findOneAndUpdate(
       { email: res.locals.user.email },
       {

@@ -5,6 +5,6 @@ import { Middleware } from "../libs/middleware";
 const authRoutes = Router();
 
 authRoutes.post("/login", Middleware.validateLogin, AuthRouteHandler.login);
-authRoutes.post("/signup", AuthRouteHandler.signUp);
+authRoutes.post("/signup", Middleware.validateSignup, AuthRouteHandler.signUp);
 
 export default authRoutes;
