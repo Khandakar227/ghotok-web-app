@@ -8,7 +8,6 @@ import UserModel from "./mongodb/userModel";
 import jwt from "jsonwebtoken";
 import Address from "./Address";
 
-interface UserProps extends GeneralInfoProps, MandatoryInfoProps {}
 export class User implements GeneralInfoProps, MandatoryInfoProps {
   // GeneralInfoProps properties
   _description?: string;

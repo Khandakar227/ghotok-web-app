@@ -10,4 +10,6 @@ const userRoutes = (0, express_1.Router)();
 const handler = new userinfo_1.default();
 userRoutes.put("/", middleware_1.Middleware.verifyUserRoute, handler.update);
 userRoutes.delete("/", middleware_1.Middleware.verifyUserRoute, handler.delete);
+// Admin use
+// userRoutes.put("/:email", handler.updatebyAdmin);
 exports.default = userRoutes;
