@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Update Profile</h2>
+    <form action="/update" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="contact_no">Contact No:</label>
+            <input type="tel" id="contact_no" name="contact_no" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="blood_group">Blood Group:</label>
+            <input type="text" id="blood_group" name="blood_group" required>
+        </div>
+        <div class="form-group">
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="marital_status">Marital Status:</label>
+            <select id="marital_status" name="marital_status" required>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="complexion">Complexion:</label>
+            <select id="complexion" name="complexion" onchange="updateColorSample()">
+                <option value="#ffe5c4">Ivory</option>
+                <option value="#ffc37d">Beige</option>
+                <option value="#fbc191">Limestone</option>
+                <option value="#ffda96">Sand</option>
+                <option value="#ca6740">Umber</option>
+                <option value="#e79e7b">Sienna</option>
+                <option value="#a35f30">Almond</option>
+                <option value="#ffe4c4">Bisque</option>
+                <option value="#db9d58">Teak</option>
+                <option value="#c48a47">Brown</option>
+                <option value="#a66a2e">DarkBrown</option>
+                <option value="#6b2e02">Espresso</option>
+                <option value="#2a1001">Chocolate</option>
+                <option value="#311400">Black</option>
+            </select>
+            <div class="color-sample" id="colorSample"></div>
+        </div>
+        <div class="form-group">
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" name="nationality" required>
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" required>
+        </div>
+        <div class="form-group">
+            <label for="present_address_division">Division:</label>
+            <input type="text" id="present_address_division" name="present_address_division" required>
+        </div>
+        <div class="form-group">
+            <label for="present_address_district">District:</label>
+            <input type="text" id="present_address_district" name="present_address_district" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update">
+        </div>
+    </form>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

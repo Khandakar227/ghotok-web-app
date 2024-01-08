@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrimony App Search</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Matrimony App Search</h2>
+    <form action="/search" method="post">
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="keyword">Keyword:</label>
+            <input type="text" id="keyword" name="keyword">
+        </div>
+        <div class="form-group">
+            <label for="complexion">Complexion:</label>
+            <input type="text" id="complexion" name="complexion">
+        </div>
+        <div class="form-group">
+            <label for="minHeight">Minimum Height:</label>
+            <input type="number" id="minHeight" name="minHeight">
+        </div>
+        <div class="form-group">
+            <label for="maxHeight">Maximum Height:</label>
+            <input type="number" id="maxHeight" name="maxHeight">
+        </div>
+        <div class="form-group">
+            <label for="minWeight">Minimum Weight:</label>
+            <input type="number" id="minWeight" name="minWeight">
+        </div>
+        <div class="form-group">
+            <label for="maxWeight">Maximum Weight:</label>
+            <input type="number" id="maxWeight" name="maxWeight">
+        </div>
+        <div class="form-group">
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district">
+        </div>
+        <div class="form-group">
+            <label for="division">Division:</label>
+            <input type="text" id="division" name="division">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Search">
+        </div>
+    </form>
+</div>
+  <!-- Search Results Section -->
+  <!-- Search Results Section -->
+<div class="results">
+    <h3>Search Results</h3>
+    <!-- Example Result (Static) -->
+    <div class="result">
+        <a href="user_profile.html?username=john_doe">
+            <h3>John Doe</h3>
+            <p>Age: 28</p>
+            <p>Marital Status: Single</p>
+            <p>Educational Qualification: Undergraduate</p>
+            <p>Socioeconomic Class: Middle Class</p>
+            <p>Extra Info: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </a>
+    </div>
+    <div class="result">
+        <a href="user_profile.html?username=jane_doe">
+            <h3>Jane Doe</h3>
+            <p>Age: 25</p>
+            <p>Marital Status: Single</p>
+            <p>Educational Qualification: Graduate</p>
+            <p>Socioeconomic Class: Upper Middle Class</p>
+            <p>Extra Info: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+        </a>
+    </div>
+    <div class="result">
+        <a href="user_profile.html?username=alice_smith">
+            <h3>Alice Smith</h3>
+            <p>Age: 30</p>
+            <p>Marital Status: Divorced</p>
+            <p>Educational Qualification: Postgraduate</p>
+            <p>Socioeconomic Class: Upper Class</p>
+            <p>Extra Info: Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+        </a>
+    </div>
+    <!-- Add more results as needed -->
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
