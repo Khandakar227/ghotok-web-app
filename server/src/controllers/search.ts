@@ -13,8 +13,8 @@ export default class SearchUser {
             if(maxHeight) filter = {...filter, height:{ ...filter.height, $lt: maxHeight }};
             if(minWeight) filter = {...filter, weight:{ $gt: minWeight }};
             if(maxWeight) filter = {...filter, weight:{ ...filter.height, $lt: maxWeight }};
-            if(district) filter = {...filter, district };
-            if(division) filter = {...filter, division };
+            if(district) filter = {...filter, "present_address.district": district };
+            if(division) filter = {...filter, "present_address.division": division };
             console.log(filter)
             const data = await UserModel.find(filter)
 

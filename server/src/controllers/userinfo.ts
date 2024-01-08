@@ -66,7 +66,7 @@ class UserInfoRouteHandler {
     await UserModel.deleteOne({ email: user.email });
     res.status(200).json({ error: false, message: "Deleted successfully" });
   }
-
+// Admin usage only
   public updatebyAdmin = async (req: Request, res: Response) => {
     const {
       username,

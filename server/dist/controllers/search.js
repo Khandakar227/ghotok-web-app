@@ -34,9 +34,9 @@ class SearchUser {
                 if (maxWeight)
                     filter = Object.assign(Object.assign({}, filter), { weight: Object.assign(Object.assign({}, filter.height), { $lt: maxWeight }) });
                 if (district)
-                    filter = Object.assign(Object.assign({}, filter), { district });
+                    filter = Object.assign(Object.assign({}, filter), { "present_address.district": district });
                 if (division)
-                    filter = Object.assign(Object.assign({}, filter), { division });
+                    filter = Object.assign(Object.assign({}, filter), { "present_address.division": division });
                 console.log(filter);
                 const data = yield userModel_1.default.find(filter);
                 res.status(200).json({ error: false, data });

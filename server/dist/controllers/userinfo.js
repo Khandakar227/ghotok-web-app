@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const userModel_1 = __importDefault(require("../models/mongodb/userModel"));
 class UserInfoRouteHandler {
     constructor() {
+        // Admin usage only
         this.updatebyAdmin = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const { username, contact, gender, description, blood_group, height, marital_status, weight, complexion, nationality, date_of_birth, education, profession, present_address, permanent_address, } = req.body;
             const user = yield userModel_1.default.findOne({ email: req.params.email });
