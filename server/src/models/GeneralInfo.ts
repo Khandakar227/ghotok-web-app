@@ -1,16 +1,17 @@
 import { BLOOD_GROUP, MARITAL_STATUS } from "../libs";
-import DOB from "./DOB";
+import Address from "./Address";
 
-// general-info.ts
   export interface GeneralInfoProps {
-    description?: string;
-    blood_group?: BLOOD_GROUP;
-    height?: number;
-    marital_status?: MARITAL_STATUS;
-    weight?: number;
-    complexion?: string;
-    nationality?: string;
-    date_of_birth?: DOB;
+    _description?: string;
+    _blood_group?: BLOOD_GROUP;
+    _height?: number;
+    _marital_status?: MARITAL_STATUS;
+    _weight?: number;
+    _complexion?: string;
+    _nationality?: string;
+    _date_of_birth?: Date;
+    _present_address?: Address;
+    _permanent_address?: Address;
   }
   
   // export abstract class GeneralInfo {

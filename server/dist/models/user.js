@@ -18,6 +18,7 @@ const crypto_1 = require("crypto");
 const libs_1 = require("../libs");
 const userModel_1 = __importDefault(require("./mongodb/userModel"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const Address_1 = __importDefault(require("./Address"));
 class User {
     // Constructor
     constructor(mandatoryInfo) {
@@ -75,6 +76,22 @@ class User {
     }
     set date_of_birth(value) {
         this._date_of_birth = value;
+    }
+    get present_address() {
+        if (this._present_address)
+            return this._present_address.getAddress();
+        return null;
+    }
+    set present_address(address) {
+        this._present_address = new Address_1.default(address.district, address.district, address.city);
+    }
+    get permanent_address() {
+        if (this._permanent_address)
+            return this._permanent_address.getAddress();
+        return null;
+    }
+    set permanent_address(address) {
+        this._permanent_address = new Address_1.default(address.district, address.district, address.city);
     }
     // MandatoryInfoProps getters and setters
     get username() {

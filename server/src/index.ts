@@ -3,6 +3,8 @@ import express from 'express';
 import { MongoDb } from './models/mongodb/driver';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
+import userRoutes from './routes/user';
+import searchRoute from './routes/search';
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/v1/api/auth", authRoutes);
+app.use("/v1/api/user", userRoutes);
+app.use("/v1/api/search", searchRoute);
 
 // Initialize Database
 MongoDb.init(process.env.MONGODB_URL as string, "ghotok-dev");

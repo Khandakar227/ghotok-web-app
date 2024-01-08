@@ -6,6 +6,7 @@ import { GeneralInfoProps } from "./GeneralInfo";
 import { MandatoryInfoProps } from "./MandatoryInfo";
 import UserModel from "./mongodb/userModel";
 import jwt from "jsonwebtoken";
+import Address from "./Address";
 
 interface UserProps extends GeneralInfoProps, MandatoryInfoProps {}
 export class User implements GeneralInfoProps, MandatoryInfoProps {
@@ -17,7 +18,9 @@ export class User implements GeneralInfoProps, MandatoryInfoProps {
   _weight?: number;
   _complexion?: string;
   _nationality?: string;
-  _date_of_birth?: DOB;
+  _date_of_birth?: Date;
+  _present_address?: Address;
+  _permanent_address?:Address;
 
   // MandatoryInfoProps properties
   _username: string;
@@ -84,11 +87,25 @@ export class User implements GeneralInfoProps, MandatoryInfoProps {
     this._nationality = value;
   }
 
-  get date_of_birth(): DOB | undefined {
+  get date_of_birth(): Date | undefined {
     return this._date_of_birth;
   }
-  set date_of_birth(value: DOB | undefined) {
+  set date_of_birth(value: Date | undefined) {
     this._date_of_birth = value;
+  }
+  get present_address():{district: string, division: string, city: string}|null {
+    if (this._present_address) return this._present_address.getAddress()
+    return null;
+  }
+  set present_address(address:{district: string, division: string, city: string}) {
+    this._present_address = new Address(address.district, address.district, address.city);
+  }
+  get permanent_address():{district: string, division: string, city: string}|null {
+    if (this._permanent_address) return this._permanent_address.getAddress()
+    return null;
+  }
+  set permanent_address(address:{district: string, division: string, city: string}) {
+    this._permanent_address = new Address(address.district, address.district, address.city);
   }
 
   // MandatoryInfoProps getters and setters
@@ -126,6 +143,7 @@ export class User implements GeneralInfoProps, MandatoryInfoProps {
   set gender(value: GENDER) {
     this._gender = value;
   }
+
   private hashPassword(password: string) {
     const salt = randomBytes(16).toString("hex");
     const hashedPassword = scryptSync(password, salt, 64).toString("hex");

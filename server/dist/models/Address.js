@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Address {
-    constructor(d, di, c) {
+    constructor(division, district, city) {
         this.division = "Dhaka";
         this.district = "Dhaka";
         this.city = "Dhaka";
-        this.setDivision(d);
-        this.setDistrict(di);
-        this.setCity(c);
+        this.setDivision(division);
+        this.setDistrict(district);
+        this.setCity(city);
     }
     setDivision(d) {
         if (d == "") {

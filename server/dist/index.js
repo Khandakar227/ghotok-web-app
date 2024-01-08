@@ -8,6 +8,8 @@ const express_1 = __importDefault(require("express"));
 const driver_1 = require("./models/mongodb/driver");
 const dotenv_1 = __importDefault(require("dotenv"));
 const auth_1 = __importDefault(require("./routes/auth"));
+const user_1 = __importDefault(require("./routes/user"));
+const search_1 = __importDefault(require("./routes/search"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = 3000;
@@ -15,6 +17,8 @@ app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use("/v1/api/auth", auth_1.default);
+app.use("/v1/api/user", user_1.default);
+app.use("/v1/api/search", search_1.default);
 // Initialize Database
 driver_1.MongoDb.init(process.env.MONGODB_URL, "ghotok-dev");
 app.listen(port, () => {

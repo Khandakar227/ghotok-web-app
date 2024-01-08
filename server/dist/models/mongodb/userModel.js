@@ -27,4 +27,15 @@ const userSchema = new mongoose_1.Schema({
     created_at: { type: Date, default: Date.now },
 });
 const UserModel = (0, mongoose_1.model)("User", userSchema);
+UserModel.collection.createIndex({
+    username: "text",
+    email: "text",
+    contact: "text",
+    description: "text",
+    nationality: "text",
+    education: "text",
+    profession: "text",
+    present_address: "text",
+    permanent_address: "text",
+});
 exports.default = UserModel;

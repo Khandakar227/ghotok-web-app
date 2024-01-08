@@ -3,10 +3,10 @@ class Address{
     private district: string = "Dhaka";
     private city: string = "Dhaka";
 
-    constructor(d: string, di: string, c: string){
-        this.setDivision(d);
-        this.setDistrict(di);
-        this.setCity(c);
+    constructor(division: string, district: string, city: string){
+        this.setDivision(division);
+        this.setDistrict(district);
+        this.setCity(city);
     }
 
     public setDivision(d: string): void{
@@ -45,7 +45,6 @@ class Address{
     public getAddress(){
         return ({division: this.division, city: this.city, district: this.district});
     }
-
 }
 
 export default Address;

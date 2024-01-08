@@ -1,9 +1,9 @@
 import { Schema } from "mongoose";
 
 const AddressSchema =  new Schema({
-    division: { type: String, required: true },
-    district: { type: String, required: true },
-    city: { type: String, required: true },
+    division: { type: String, required: true, index: 'text' },
+    district: { type: String, required: true, index: 'text' },
+    city: { type: String, required: true, index: 'text' },
 });
 
 export default AddressSchema;

@@ -28,7 +28,7 @@ class UserInfoRouteHandler {
       });
     }
 
-    await UserModel.findOneAndUpdate(
+    const updatedUser = await UserModel.findOneAndUpdate(
       { email: res.locals.user.email },
       {
         $set: {
@@ -48,18 +48,23 @@ class UserInfoRouteHandler {
           present_address: present_address || user.present_address,
           permanent_address: permanent_address || user.permanent_address,
         },
-      }
+      },
+      { new: true }
     );
+    if(updatedUser) updatedUser.password = "";
+    res.status(200).json({ error: false, data: updatedUser });
   }
+
   public async delete(req: Request, res: Response) {
     const user = await UserModel.findOne({ email: res.locals.user.email });
     if (!user) {
       return res.status(404).json({
         error: true,
-        message: "User doesnot exist",
+        message: "User does not exist",
       });
     }
     await UserModel.deleteOne({ email: user.email });
+    res.status(200).json({ error: false, message: "Deleted successfully" });
   }
 }
 
