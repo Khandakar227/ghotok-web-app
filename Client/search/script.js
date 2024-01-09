@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData(form);
         
         // Construct the URL for fetching data from the API
-        let url = 'https://api.example.com/users?'; // Replace with your API endpoint
+        let url = 'http://localhost:3000/v1/api/search?'; // Replace with your API endpoint
         
         for (let [key, value] of formData.entries()) {
             if (value.trim() !== '') { // Check if the value is not empty

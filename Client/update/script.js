@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData(form);
         
         // Construct the URL for updating the database
-        let url = '/update?';
+        let url = 'http://localhost:3000/v1/api/user?';
         
         for (let [key, value] of formData.entries()) {
             // Only append fields with non-empty values to the URL
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(url);
         // Send the request to update the database
         fetch(url, {
-            method: 'POST' // Assuming the server expects a POST request
+            method: 'PUT' // Assuming the server expects a PUT request
         })
         .then(response => response.json()) // Assuming the server returns JSON
         .then(data => {
