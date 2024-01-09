@@ -36,8 +36,17 @@
             <textarea id="description" name="description" rows="4"></textarea>
         </div>
         <div class="form-group">
-            <label for="blood_group">Blood Group:</label>
-            <input type="text" id="blood_group" name="blood_group">
+            <label for="marital_status">Blood Group:</label>
+            <select id="blood_group" name="blood_group">
+                <option value="op">O+</option>
+                <option value="on">O-</option>
+                <option value="ap">A+</option>
+                <option value="an">A-</option>
+                <option value="bp">B+</option>
+                <option value="bn">B-</option>
+                <option value="abp">AB+</option>
+                <option value="abn">AB-</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="height">Height:</label>
@@ -84,8 +93,8 @@
             <label for="date_of_birth">Date of Birth:</label>
             <input type="date" id="date_of_birth" name="date_of_birth">
         </div>
-        <h3>Present Address</h3>
         <div class="form-group">
+            <h3>Present Address</h3>
             <label for="present_address_division">Division:</label>
             <input type="text" id="present_address_division" name="present_address_division">
         </div>
@@ -93,10 +102,13 @@
             <label for="present_address_district">District:</label>
             <input type="text" id="present_address_district" name="present_address_district">
         </div>
-        
-        <h3>Permanent Address</h3>
+        <div class="form-group">
+            <label for="present_address_city">City:</label>
+            <input type="text" id="present_address_city" name="present_address_city">
+        </div>
         
         <div class="form-group">
+            <h3>Permanent Address</h3>
             <label for="permanent_address_division">Division:</label>
             <input type="text" id="permanent_address_division" name="permanent_address_division">
         </div>
@@ -105,6 +117,10 @@
             <input type="text" id="permanent_address_district" name="permanent_address_district">
         </div>
         <div class="form-group">
+            <label for="parmanent_address_city">City:</label>
+            <input type="text" id="parmanent_address_city" name="parmanent_address_city">
+        </div>
+        <div class="form-group mid">
             <input type="submit" value="Update">
         </div>
     </form>
