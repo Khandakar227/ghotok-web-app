@@ -69,7 +69,6 @@ input[type="submit"]:hover {
 
 .color-sample {
     display: block;
-    vertical-align: middle;  /* Added this for vertical alignment */
     width: 30px;
     height: 30px;
     margin-left: 10px;
